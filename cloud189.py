@@ -35,7 +35,7 @@ def main(username, password):
     }
     response = s.get(surl, headers=headers)
     netdisk_bonus = response.json()['netdiskBonus']
-    if (response.json()['isSign'] == "false"):
+    if (response.json()['isSign'] == False):
         log.info(f"状态：签到成功，获得：{netdisk_bonus}M空间")
     else:
         log.info(f"状态：已经签到过了，获得：{netdisk_bonus}M空间")
